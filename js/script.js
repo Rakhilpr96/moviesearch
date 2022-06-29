@@ -1,0 +1,1 @@
+lpTag.agentSDK.init({});
