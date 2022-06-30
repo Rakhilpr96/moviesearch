@@ -1,1 +1,35 @@
 // lpTag.agentSDK.init({});
+
+function getVal() {
+  const val = document.querySelector("input").value;
+  console.log(val);
+  let movieList = [];
+
+  fetch("https://www.omdbapi.com/?s=" + val + "&apikey=c15f80cd")
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("NETWORK RESPONSE ERROR");
+      }
+    })
+    .then((data) => {
+      console.log(data.Search);
+      movieList = data.Search;
+      document.getElementById("movie-list").innerHTML = data.Search.map(
+        (item) =>
+          `<li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">${item.Title}</div>
+          Year : <span class="movie-year">${item.Year}</span>
+        </div>
+        <span class="badge bg-primary rounded-pill">${item.imdbID}</span>
+      </li>`
+      ).join("");
+    })
+    .catch((error) => console.error("FETCH ERROR:", error));
+}
+
+document.getElementById("button-addon2").addEventListener("click", () => {
+  getVal();
+});
