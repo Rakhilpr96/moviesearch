@@ -1,5 +1,3 @@
-// lpTag.agentSDK.init({});
-
 function getVal() {
   const val = document.querySelector("input").value;
   let movieList = [];
@@ -43,3 +41,13 @@ function getVal() {
 document.getElementById("button-addon2").addEventListener("click", () => {
   getVal();
 });
+
+lpTag.agentSDK.init();
+
+var pathToData = "chatTranscript.lines";
+
+const onSuccess = (msg) => console.log("Chat Transcript Success", msg);
+
+const onError = (err) => console.log("Chat Transcript Error", err);
+
+lpTag.agentSDK.get(pathToData, onSuccess, onError);
