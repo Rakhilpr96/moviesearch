@@ -56,9 +56,9 @@ document.querySelector(".version").innerHTML = `<div>V 1.2</div>`;
 // lpTag.agentSDK.get(pathToData, onSuccess, onError);
 
 var onSuccess = function (data) {
-  document.querySelector(".success-msg").innerHTML = `<h4>Data : ${
-    data(data.length - 1).text
-  }</h4>`;
+  document.querySelector(
+    ".success-msg"
+  ).innerHTML = `<h4>Data : ${JSON.stringify(data)}</h4>`;
 };
 
 var onError = function (err) {
