@@ -28,7 +28,7 @@ function fetchMovies() {
         } else {
           document.getElementById(
             "movie-list"
-          ).innerHTML = `<h3>No Results</h3>`;
+          ).innerHTML = `<h3 class="c-white">No Results</h3>`;
         }
       }
     })
@@ -42,7 +42,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 1.6</div>`;
+document.querySelector(".version").innerHTML = `<div>V 1.7</div>`;
 
 // Agent Widget SDK
 lpTag.agentSDK.init();

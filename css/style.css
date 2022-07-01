@@ -4,6 +4,7 @@ body {
 #title {
   color: aliceblue;
 }
+
 textarea:hover,
 input:hover,
 textarea:active,
@@ -28,7 +29,11 @@ label:focus,
 }
 .version {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 20px;
   color: cornsilk;
+}
+
+.c-white {
+  color: aliceblue;
 }
