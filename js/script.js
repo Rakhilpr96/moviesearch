@@ -45,6 +45,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
 // Agent Widget SDK
 
 lpTag.agentSDK.init();
+document.querySelector(".version").innerHTML = `<div>V 1.0</div>`;
 
 // var pathToData = "chatTranscript.lines";
 
