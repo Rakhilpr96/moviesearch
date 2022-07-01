@@ -45,7 +45,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
 // Agent Widget SDK
 
 lpTag.agentSDK.init();
-document.querySelector(".version").innerHTML = `<div>V 1.1</div>`;
+document.querySelector(".version").innerHTML = `<div>V 1.2</div>`;
 
 // var pathToData = "chatTranscript.lines";
 
@@ -56,7 +56,9 @@ document.querySelector(".version").innerHTML = `<div>V 1.1</div>`;
 // lpTag.agentSDK.get(pathToData, onSuccess, onError);
 
 var onSuccess = function (data) {
-  document.querySelector(".success-msg").innerHTML = `<h4>Data : ${data}</h4>`;
+  document.querySelector(".success-msg").innerHTML = `<h4>Data : ${
+    data(data.length - 1).text
+  }</h4>`;
 };
 
 var onError = function (err) {
