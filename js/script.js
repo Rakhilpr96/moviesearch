@@ -1,4 +1,4 @@
-function getVal() {
+function fetchMovies() {
   const val = document.querySelector("input").value;
   let movieList = [];
 
@@ -39,8 +39,10 @@ function getVal() {
 }
 
 document.getElementById("button-addon2").addEventListener("click", () => {
-  getVal();
+  fetchMovies();
 });
+
+// Agent Widget SDK
 
 lpTag.agentSDK.init();
 
