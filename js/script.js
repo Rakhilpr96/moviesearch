@@ -46,10 +46,22 @@ document.getElementById("button-addon2").addEventListener("click", () => {
 
 lpTag.agentSDK.init();
 
-var pathToData = "chatTranscript.lines";
+// var pathToData = "chatTranscript.lines";
 
-const onSuccess = (msg) => console.log("Chat Transcript Success", msg);
+// const onSuccess = (msg) => console.log("Chat Transcript Success", msg);
 
-const onError = (err) => console.log("Chat Transcript Error", err);
+// const onError = (err) => console.log("Chat Transcript Error", err);
+
+// lpTag.agentSDK.get(pathToData, onSuccess, onError);
+
+var onSuccess = function (data) {
+  document.querySelector(".success-msg").innerHTML = `<h4>Data : ${data}</h4>`;
+};
+
+var onError = function (err) {
+  document.querySelector(".error-msg").innerHTML = `<h4>Error</h4>`;
+};
+
+var pathToData = "visitorInfo.visitorName";
 
 lpTag.agentSDK.get(pathToData, onSuccess, onError);

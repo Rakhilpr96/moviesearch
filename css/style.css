@@ -20,3 +20,9 @@ label:focus,
   -webkit-appearance: none;
   box-shadow: none !important;
 }
+.success-msg {
+  color: aqua;
+}
+.error-msg {
+  color: aqua;
+}
