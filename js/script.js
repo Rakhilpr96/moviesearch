@@ -63,6 +63,6 @@ var onError = function (err) {
   document.querySelector(".error-msg").innerHTML = `<h4>Error</h4>`;
 };
 
-var pathToData = "visitorInfo.visitorId";
+var pathToData = "chatTranscript.lines";
 
 lpTag.agentSDK.get(pathToData, onSuccess, onError);
