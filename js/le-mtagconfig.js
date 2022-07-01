@@ -97,4 +97,4 @@
       lpTag.init())
     : (window.lpTag._tagCount += 1);
 
-lpTag.agentSDK.init();
+// lpTag.agentSDK.init();
