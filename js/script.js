@@ -42,7 +42,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 2.3</div>`;
+document.querySelector(".version").innerHTML = `<div>V 2.4</div>`;
 
 // Agent Widget SDK
 
@@ -78,6 +78,15 @@ var onSuccess = function (data) {
 var onError = function (err) {
   document.querySelector(".error-msg").innerHTML = `Error : <h6>${err}</h6>`;
 };
+
+var notificationHandler = function (data) {
+  document.querySelector(
+    ".notify-msg2"
+  ).innerHTML = `<h6>Notification triggered</h6>`;
+};
+
+// Add a notification handler.
+lpTag.agentSDK.onNotify(notificationHandler);
 
 var pathToData = "chatTranscript.lines";
 
