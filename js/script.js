@@ -71,6 +71,21 @@ var onSuccess = function (data) {
     };
 
     lpTag.agentSDK.command(cmdName, notifyData, notifyWhenDone);
+
+    var cmdName2 = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
+    var data2 = {
+      json: {
+        type: "text",
+        text: "product name",
+        tooltip: "text tooltip",
+        style: {
+          bold: true,
+          size: "large",
+        },
+      },
+    };
+
+    lpTag.agentSDK.command(cmdName2, data2, notifyWhenDone);
   }
   fetchMovies();
 };
