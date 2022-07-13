@@ -42,7 +42,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 1.9</div>`;
+document.querySelector(".version").innerHTML = `<div>V 2.0</div>`;
 
 // Agent Widget SDK
 
@@ -50,7 +50,7 @@ var notificationHandler = function (data) {
   const msg = data[data.length - 1].text;
   document.querySelector(
     ".error-msg"
-  ).innerHTML = `Notification : <h6>${msg}</h6>`;
+  ).innerHTML = `Notification : <h6>notification</h6>`;
 };
 
 var focusHandler = function () {
