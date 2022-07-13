@@ -51,12 +51,57 @@ lpTag.agentSDK.init();
 var onSuccess = function (data) {
   const lastMsg = data[data.length - 1].text;
   document.querySelector("input").value = `${lastMsg}`;
+  // if (lastMsg.includes("?")) {
+  //   document.querySelector(
+  //     ".new-msg"
+  //   ).innerHTML = `User question :<h6>${lastMsg}</>`;
+  //   var cmdName = "Send Notification";
+  //   var notifyData = { text: "Some text" };
+
+  //   var notifyWhenDone = function (err) {
+  //     if (err) {
+  //       document.querySelector(
+  //         ".error-msg"
+  //       ).innerHTML = `Error : <h6>${err}</h6>`;
+  //     } else {
+  //       document.querySelector(
+  //         ".notify-msg"
+  //       ).innerHTML = `<h6>Notification Sent Successfully</h6>`;
+  //     }
+  //   };
+
+  //   lpTag.agentSDK.command(cmdName, notifyData, notifyWhenDone);
+
+  //   var cmdName2 = lpTag.agentSDK.cmdNames.writeSC; // = "Write StructuredContent"
+  //   var data2 = {
+  //     json: {
+  //       type: "text",
+  //       text: "product name",
+  //       tooltip: "text tooltip",
+  //       style: {
+  //         bold: true,
+  //         size: "large",
+  //       },
+  //     },
+  //   };
+
+  //   lpTag.agentSDK.command(cmdName2, data2, notifyWhenDone);
+  // }
   fetchMovies();
 };
 
 var onError = function (err) {
   document.querySelector(".error-msg").innerHTML = `Error : <h6>${err}</h6>`;
 };
+
+// var notificationHandler = function (data) {
+//   document.querySelector(
+//     ".notify-msg2"
+//   ).innerHTML = `<h6>Notification triggered</h6>`;
+// };
+
+// Add a notification handler.
+// lpTag.agentSDK.onNotify(notificationHandler);
 
 var pathToData = "chatTranscript.lines";
 
