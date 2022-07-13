@@ -42,7 +42,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 2.2</div>`;
+document.querySelector(".version").innerHTML = `<div>V 2.3</div>`;
 
 // Agent Widget SDK
 
@@ -52,7 +52,9 @@ var onSuccess = function (data) {
   const lastMsg = data[data.length - 1].text;
   document.querySelector("input").value = `${lastMsg}`;
   if (lastMsg.includes("?")) {
-    document.querySelector(".new-msg").innerHTML = `<h6>${lastMsg}</>`;
+    document.querySelector(
+      ".new-msg"
+    ).innerHTML = `User question :<h6>${lastMsg}</>`;
     var cmdName = "Send Notification";
     var notifyData = {};
 
@@ -61,10 +63,11 @@ var onSuccess = function (data) {
         document.querySelector(
           ".error-msg"
         ).innerHTML = `Error : <h6>${err}</h6>`;
+      } else {
+        document.querySelector(
+          ".notify-msg"
+        ).innerHTML = `<h6>Notification Sent Successfully</h6>`;
       }
-      document.querySelector(
-        ".notify-msg"
-      ).innerHTML = `Error : <h6>Notification Sent Successfully</h6>`;
     };
 
     lpTag.agentSDK.command(cmdName, notifyData, notifyWhenDone);
