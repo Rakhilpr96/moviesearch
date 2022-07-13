@@ -42,7 +42,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 2.6</div>`;
+document.querySelector(".version").innerHTML = `<div>V 2.7</div>`;
 
 // Agent Widget SDK
 
@@ -55,8 +55,8 @@ var onSuccess = function (data) {
     document.querySelector(
       ".new-msg"
     ).innerHTML = `User question :<h6>${lastMsg}</>`;
-    var cmdName = lpTag.agentSDK.cmdNames.notify;
-    var notifyData = {};
+    var cmdName = "Send Notification";
+    var notifyData = { text: "Some text" };
 
     var notifyWhenDone = function (err) {
       if (err) {
