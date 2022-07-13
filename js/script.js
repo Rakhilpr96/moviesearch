@@ -42,31 +42,29 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 1.8</div>`;
+document.querySelector(".version").innerHTML = `<div>V 1.9</div>`;
 
 // Agent Widget SDK
-{
-  var notificationHandler = function (data) {
-    const msg = data[data.length - 1].text;
-    document.querySelector(
-      ".error-msg"
-    ).innerHTML = `Notification : <h6>${msg}</h6>`;
-  };
 
-  var focusHandler = function () {
-    // Do something when the visitor is focused
-    document.querySelector(
-      ".error-msg"
-    ).innerHTML = `<h6>visitor is focused</h6>`;
-  };
+var notificationHandler = function (data) {
+  const msg = data[data.length - 1].text;
+  document.querySelector(
+    ".error-msg"
+  ).innerHTML = `Notification : <h6>${msg}</h6>`;
+};
 
-  var blurHandler = function () {
-    // Do something when the visitor is blurred
-    document.querySelector(
-      ".error-msg"
-    ).innerHTML = `<h6>visitor is blured</h6>`;
-  };
-}
+var focusHandler = function () {
+  // Do something when the visitor is focused
+  document.querySelector(
+    ".error-msg"
+  ).innerHTML = `<h6>visitor is focused</h6>`;
+};
+
+var blurHandler = function () {
+  // Do something when the visitor is blurred
+  document.querySelector(".error-msg").innerHTML = `<h6>visitor is blured</h6>`;
+};
+
 lpTag.agentSDK.init({
   notificationCallback: notificationHandler,
   visitorFocusedCallback: focusHandler,
