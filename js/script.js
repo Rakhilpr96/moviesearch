@@ -42,27 +42,25 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 2.0</div>`;
+document.querySelector(".version").innerHTML = `<div>V 2.1</div>`;
 
 // Agent Widget SDK
 
 var notificationHandler = function (data) {
   const msg = data[data.length - 1].text;
   document.querySelector(
-    ".error-msg"
+    ".new-msg"
   ).innerHTML = `Notification : <h6>notification</h6>`;
 };
 
 var focusHandler = function () {
   // Do something when the visitor is focused
-  document.querySelector(
-    ".error-msg"
-  ).innerHTML = `<h6>visitor is focused</h6>`;
+  document.querySelector(".new-msg").innerHTML = `<h6>visitor is focused</h6>`;
 };
 
 var blurHandler = function () {
   // Do something when the visitor is blurred
-  document.querySelector(".error-msg").innerHTML = `<h6>visitor is blured</h6>`;
+  document.querySelector(".new-msg").innerHTML = `<h6>visitor is blured</h6>`;
 };
 
 lpTag.agentSDK.init({

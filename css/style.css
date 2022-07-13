@@ -27,6 +27,9 @@ label:focus,
 .error-msg {
   color: aqua;
 }
+.new-msg {
+  color: antiquewhite;
+}
 .version {
   position: absolute;
   top: 10px;
