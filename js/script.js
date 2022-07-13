@@ -42,36 +42,33 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 2.1</div>`;
+document.querySelector(".version").innerHTML = `<div>V 2.2</div>`;
 
 // Agent Widget SDK
 
-var notificationHandler = function (data) {
-  const msg = data[data.length - 1].text;
-  document.querySelector(
-    ".new-msg"
-  ).innerHTML = `Notification : <h6>notification</h6>`;
-};
-
-var focusHandler = function () {
-  // Do something when the visitor is focused
-  document.querySelector(".new-msg").innerHTML = `<h6>visitor is focused</h6>`;
-};
-
-var blurHandler = function () {
-  // Do something when the visitor is blurred
-  document.querySelector(".new-msg").innerHTML = `<h6>visitor is blured</h6>`;
-};
-
-lpTag.agentSDK.init({
-  notificationCallback: notificationHandler,
-  visitorFocusedCallback: focusHandler,
-  visitorBlurredCallback: blurHandler,
-});
+lpTag.agentSDK.init();
 
 var onSuccess = function (data) {
   const lastMsg = data[data.length - 1].text;
   document.querySelector("input").value = `${lastMsg}`;
+  if (lastMsg.includes("?")) {
+    document.querySelector(".new-msg").innerHTML = `<h6>${lastMsg}</>`;
+    var cmdName = "Send Notification";
+    var notifyData = {};
+
+    var notifyWhenDone = function (err) {
+      if (err) {
+        document.querySelector(
+          ".error-msg"
+        ).innerHTML = `Error : <h6>${err}</h6>`;
+      }
+      document.querySelector(
+        ".notify-msg"
+      ).innerHTML = `Error : <h6>Notification Sent Successfully</h6>`;
+    };
+
+    lpTag.agentSDK.command(cmdName, notifyData, notifyWhenDone);
+  }
   fetchMovies();
 };
 

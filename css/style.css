@@ -24,7 +24,8 @@ label:focus,
 .success-msg {
   color: aqua;
 }
-.error-msg {
+.error-msg,
+.notify-msg {
   color: aqua;
 }
 .new-msg {
