@@ -42,7 +42,7 @@ document.getElementById("button-addon2").addEventListener("click", () => {
   fetchMovies();
 });
 
-document.querySelector(".version").innerHTML = `<div>V 1.7</div>`;
+document.querySelector(".version").innerHTML = `<div>V 1.8</div>`;
 
 // Agent Widget SDK
 {
